@@ -11,4 +11,8 @@ resource "null_resource" "hello" {
   provisioner "local-exec" {
     command = "echo Hello, Terraform!"
   }
+
+  triggers = {
+    always_run = "${timestamp()}"
+  }
 }
